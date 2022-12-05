@@ -2,11 +2,12 @@ package db
 
 import (
 	"database/sql"
-	_ "github.com/lib/pq"
-	"github.com/techschool/simplebank/util"
 	"log"
 	"os"
 	"testing"
+
+	_ "github.com/lib/pq"
+	"github.com/techschool/simplebank/util"
 )
 
 var testQueries *Queries
@@ -18,11 +19,12 @@ func TestMain(m *testing.M) {
 		log.Fatal("cannot load config:", err)
 	}
 
-	testDB, err = sql.Open(config.DBDriver, config.DBDriver)
+	testDB, err = sql.Open(config.DBDriver, config.DBSource)
 	if err != nil {
-		log.Fatal("cannot connect to the db: ", err)
+		log.Fatal("cannot connect to db:", err)
 	}
 
 	testQueries = New(testDB)
+
 	os.Exit(m.Run())
 }
