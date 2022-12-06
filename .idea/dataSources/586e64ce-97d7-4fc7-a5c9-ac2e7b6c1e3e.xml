@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.43">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <IntrospectionStateNumber>763</IntrospectionStateNumber>
+      <IntrospectionStateNumber>3419</IntrospectionStateNumber>
       <ServerVersion>14.6</ServerVersion>
       <StartupTime>1669729088</StartupTime>
       <TimeZones>true ACDT
@@ -811,11 +811,11 @@ false posixrules
 13403||10|C|G
 13403||-9223372036854775808|U|G
 13403||10|U|G</Grants>
-      <IntrospectionStateNumber>763</IntrospectionStateNumber>
+      <IntrospectionStateNumber>3419</IntrospectionStateNumber>
       <ObjectId>16385</ObjectId>
-      <Relations>sequence|table|16488|16489|1
-sequence|table|16498|16499|1
-sequence|table|16506|16507|1
+      <Relations>sequence|table|16658|16659|1
+sequence|table|16668|16669|1
+sequence|table|16676|16677|1
 </Relations>
       <OwnerName>root</OwnerName>
     </database>
@@ -4236,303 +4236,419 @@ sequence|table|16506|16507|1
     <schema id="263" parent="4" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>763</IntrospectionStateNumber>
+      <IntrospectionStateNumber>3419</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>527</StateNumber>
       <OwnerName>root</OwnerName>
     </schema>
     <sequence id="264" parent="263" name="accounts_id_seq">
       <DataType>bigint|0s</DataType>
-      <ObjectId>16488</ObjectId>
-      <StateNumber>760</StateNumber>
+      <ObjectId>16658</ObjectId>
+      <StateNumber>3414</StateNumber>
       <OwnerName>root</OwnerName>
     </sequence>
     <sequence id="265" parent="263" name="entries_id_seq">
       <DataType>bigint|0s</DataType>
-      <ObjectId>16498</ObjectId>
-      <StateNumber>760</StateNumber>
+      <ObjectId>16668</ObjectId>
+      <StateNumber>3414</StateNumber>
       <OwnerName>root</OwnerName>
     </sequence>
     <sequence id="266" parent="263" name="transfers_id_seq">
       <DataType>bigint|0s</DataType>
-      <ObjectId>16506</ObjectId>
-      <StateNumber>760</StateNumber>
+      <ObjectId>16676</ObjectId>
+      <StateNumber>3414</StateNumber>
       <OwnerName>root</OwnerName>
     </sequence>
     <table id="267" parent="263" name="accounts">
-      <ObjectId>16489</ObjectId>
-      <StateNumber>760</StateNumber>
+      <ObjectId>16659</ObjectId>
+      <StateNumber>3414</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>root</OwnerName>
     </table>
     <table id="268" parent="263" name="entries">
-      <ObjectId>16499</ObjectId>
-      <StateNumber>760</StateNumber>
+      <ObjectId>16669</ObjectId>
+      <StateNumber>3414</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>root</OwnerName>
     </table>
     <table id="269" parent="263" name="schema_migrations">
       <ObjectId>16481</ObjectId>
-      <StateNumber>761</StateNumber>
+      <StateNumber>3418</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>root</OwnerName>
     </table>
     <table id="270" parent="263" name="transfers">
-      <ObjectId>16507</ObjectId>
-      <StateNumber>760</StateNumber>
+      <ObjectId>16677</ObjectId>
+      <StateNumber>3414</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>root</OwnerName>
     </table>
-    <column id="271" parent="267" name="id">
+    <table id="271" parent="263" name="users">
+      <ObjectId>16708</ObjectId>
+      <StateNumber>3417</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>root</OwnerName>
+    </table>
+    <column id="272" parent="267" name="id">
       <DataType>bigint|0s</DataType>
       <DefaultExpression>nextval(&apos;accounts_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>760</StateNumber>
+      <StateNumber>3414</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="272" parent="267" name="owner">
+    <column id="273" parent="267" name="owner">
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>760</StateNumber>
+      <StateNumber>3414</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="273" parent="267" name="balance">
+    <column id="274" parent="267" name="balance">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>760</StateNumber>
+      <StateNumber>3414</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="274" parent="267" name="currency">
+    <column id="275" parent="267" name="currency">
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>760</StateNumber>
+      <StateNumber>3414</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="275" parent="267" name="created_at">
+    <column id="276" parent="267" name="created_at">
       <DataType>timestamp with time zone|0s</DataType>
       <DefaultExpression>now()</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>5</Position>
-      <StateNumber>760</StateNumber>
+      <StateNumber>3414</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <index id="276" parent="267" name="accounts_pkey">
+    <foreign-key id="277" parent="267" name="accounts_owner_fkey">
+      <ColNames>owner</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16719</ObjectId>
+      <RefColNames>username</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>3417</StateNumber>
+      <RefTableId>16708</RefTableId>
+      <RefTableName>users</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <index id="278" parent="267" name="accounts_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16496</ObjectId>
+      <ObjectId>16666</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>760</StateNumber>
+      <StateNumber>3414</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="277" parent="267" name="accounts_owner_idx">
+    <index id="279" parent="267" name="owner_currency_key">
+      <ColNames>owner
+currency</ColNames>
+      <ObjectId>16724</ObjectId>
+      <StateNumber>3417</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>100
+100</CollationIds>
+      <CollationNames>default
+default</CollationNames>
+      <CollationParentNames>pg_catalog
+pg_catalog</CollationParentNames>
+    </index>
+    <index id="280" parent="267" name="accounts_owner_idx">
       <ColNames>owner</ColNames>
-      <ObjectId>16529</ObjectId>
-      <StateNumber>760</StateNumber>
+      <ObjectId>16699</ObjectId>
+      <StateNumber>3414</StateNumber>
       <AccessMethodId>403</AccessMethodId>
       <CollationNames>default</CollationNames>
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="278" parent="267" name="accounts_pkey">
+    <key id="281" parent="267" name="accounts_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16497</ObjectId>
+      <ObjectId>16667</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>760</StateNumber>
-      <UnderlyingIndexId>16496</UnderlyingIndexId>
+      <StateNumber>3414</StateNumber>
+      <UnderlyingIndexId>16666</UnderlyingIndexId>
     </key>
-    <column id="279" parent="268" name="id">
+    <key id="282" parent="267" name="owner_currency_key">
+      <ObjectId>16725</ObjectId>
+      <StateNumber>3417</StateNumber>
+      <UnderlyingIndexId>16724</UnderlyingIndexId>
+    </key>
+    <column id="283" parent="268" name="id">
       <DataType>bigint|0s</DataType>
       <DefaultExpression>nextval(&apos;entries_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>760</StateNumber>
+      <StateNumber>3414</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="280" parent="268" name="account_id">
+    <column id="284" parent="268" name="account_id">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>760</StateNumber>
+      <StateNumber>3414</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="281" parent="268" name="amount">
+    <column id="285" parent="268" name="amount">
       <Comment>can be negative or positive</Comment>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>760</StateNumber>
+      <StateNumber>3414</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="282" parent="268" name="created_at">
+    <column id="286" parent="268" name="created_at">
       <DataType>timestamp with time zone|0s</DataType>
       <DefaultExpression>now()</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>760</StateNumber>
+      <StateNumber>3414</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <foreign-key id="283" parent="268" name="entries_account_id_fkey">
+    <foreign-key id="287" parent="268" name="entries_account_id_fkey">
       <ColNames>account_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16514</ObjectId>
+      <ObjectId>16684</ObjectId>
       <RefColNames>id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>760</StateNumber>
-      <RefTableId>16489</RefTableId>
+      <StateNumber>3414</StateNumber>
+      <RefTableId>16659</RefTableId>
       <RefTableName>accounts</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="284" parent="268" name="entries_pkey">
+    <index id="288" parent="268" name="entries_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16504</ObjectId>
+      <ObjectId>16674</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>760</StateNumber>
+      <StateNumber>3414</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="285" parent="268" name="entries_account_id_idx">
+    <index id="289" parent="268" name="entries_account_id_idx">
       <ColNames>account_id</ColNames>
-      <ObjectId>16530</ObjectId>
-      <StateNumber>760</StateNumber>
+      <ObjectId>16700</ObjectId>
+      <StateNumber>3414</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="286" parent="268" name="entries_pkey">
+    <key id="290" parent="268" name="entries_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16505</ObjectId>
+      <ObjectId>16675</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>760</StateNumber>
-      <UnderlyingIndexId>16504</UnderlyingIndexId>
+      <StateNumber>3414</StateNumber>
+      <UnderlyingIndexId>16674</UnderlyingIndexId>
     </key>
-    <column id="287" parent="269" name="version">
+    <column id="291" parent="269" name="version">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>758</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="288" parent="269" name="dirty">
+    <column id="292" parent="269" name="dirty">
       <DataType>boolean|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>758</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <index id="289" parent="269" name="schema_migrations_pkey">
+    <index id="293" parent="269" name="schema_migrations_pkey">
       <ColNames>version</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16484</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>761</StateNumber>
+      <StateNumber>3418</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="290" parent="269" name="schema_migrations_pkey">
+    <key id="294" parent="269" name="schema_migrations_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16485</ObjectId>
       <Primary>1</Primary>
       <StateNumber>758</StateNumber>
       <UnderlyingIndexId>16484</UnderlyingIndexId>
     </key>
-    <column id="291" parent="270" name="id">
+    <column id="295" parent="270" name="id">
       <DataType>bigint|0s</DataType>
       <DefaultExpression>nextval(&apos;transfers_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>760</StateNumber>
+      <StateNumber>3414</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="292" parent="270" name="from_account_id">
+    <column id="296" parent="270" name="from_account_id">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>760</StateNumber>
+      <StateNumber>3414</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="293" parent="270" name="to_account_id">
+    <column id="297" parent="270" name="to_account_id">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>760</StateNumber>
+      <StateNumber>3414</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="294" parent="270" name="amount">
+    <column id="298" parent="270" name="amount">
       <Comment>must be positive</Comment>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>760</StateNumber>
+      <StateNumber>3414</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="295" parent="270" name="created_at">
+    <column id="299" parent="270" name="created_at">
       <DataType>timestamp with time zone|0s</DataType>
       <DefaultExpression>now()</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>5</Position>
-      <StateNumber>760</StateNumber>
+      <StateNumber>3414</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <foreign-key id="296" parent="270" name="transfers_from_account_id_fkey">
+    <foreign-key id="300" parent="270" name="transfers_from_account_id_fkey">
       <ColNames>from_account_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16519</ObjectId>
+      <ObjectId>16689</ObjectId>
       <RefColNames>id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>760</StateNumber>
-      <RefTableId>16489</RefTableId>
+      <StateNumber>3414</StateNumber>
+      <RefTableId>16659</RefTableId>
       <RefTableName>accounts</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="297" parent="270" name="transfers_to_account_id_fkey">
+    <foreign-key id="301" parent="270" name="transfers_to_account_id_fkey">
       <ColNames>to_account_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16524</ObjectId>
+      <ObjectId>16694</ObjectId>
       <RefColNames>id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>760</StateNumber>
-      <RefTableId>16489</RefTableId>
+      <StateNumber>3414</StateNumber>
+      <RefTableId>16659</RefTableId>
       <RefTableName>accounts</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="298" parent="270" name="transfers_pkey">
+    <index id="302" parent="270" name="transfers_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16512</ObjectId>
+      <ObjectId>16682</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>760</StateNumber>
+      <StateNumber>3414</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="299" parent="270" name="transfers_from_account_id_to_account_id_idx">
+    <index id="303" parent="270" name="transfers_from_account_id_to_account_id_idx">
       <ColNames>from_account_id
 to_account_id</ColNames>
-      <ObjectId>16533</ObjectId>
-      <StateNumber>760</StateNumber>
+      <ObjectId>16703</ObjectId>
+      <StateNumber>3414</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="300" parent="270" name="transfers_from_account_id_idx">
+    <index id="304" parent="270" name="transfers_from_account_id_idx">
       <ColNames>from_account_id</ColNames>
-      <ObjectId>16531</ObjectId>
-      <StateNumber>760</StateNumber>
+      <ObjectId>16701</ObjectId>
+      <StateNumber>3414</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="301" parent="270" name="transfers_to_account_id_idx">
+    <index id="305" parent="270" name="transfers_to_account_id_idx">
       <ColNames>to_account_id</ColNames>
-      <ObjectId>16532</ObjectId>
-      <StateNumber>760</StateNumber>
+      <ObjectId>16702</ObjectId>
+      <StateNumber>3414</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="302" parent="270" name="transfers_pkey">
+    <key id="306" parent="270" name="transfers_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16513</ObjectId>
+      <ObjectId>16683</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>760</StateNumber>
-      <UnderlyingIndexId>16512</UnderlyingIndexId>
+      <StateNumber>3414</StateNumber>
+      <UnderlyingIndexId>16682</UnderlyingIndexId>
+    </key>
+    <column id="307" parent="271" name="username">
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>3417</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="308" parent="271" name="hashed_password">
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StateNumber>3417</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="309" parent="271" name="full_name">
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StateNumber>3417</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="310" parent="271" name="email">
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StateNumber>3417</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="311" parent="271" name="password_changed_at">
+      <DataType>timestamp with time zone|0s</DataType>
+      <DefaultExpression>&apos;0001-01-01 00:00:00+00&apos;::timestamp with time zone</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StateNumber>3417</StateNumber>
+      <TypeId>1184</TypeId>
+    </column>
+    <column id="312" parent="271" name="created_at">
+      <DataType>timestamp with time zone|0s</DataType>
+      <DefaultExpression>now()</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+      <StateNumber>3417</StateNumber>
+      <TypeId>1184</TypeId>
+    </column>
+    <index id="313" parent="271" name="users_pkey">
+      <ColNames>username</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16715</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>3417</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationNames>default</CollationNames>
+      <CollationIds>100</CollationIds>
+      <CollationParentNames>pg_catalog</CollationParentNames>
+    </index>
+    <index id="314" parent="271" name="users_email_key">
+      <ColNames>email</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16717</ObjectId>
+      <StateNumber>3417</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationNames>default</CollationNames>
+      <CollationIds>100</CollationIds>
+      <CollationParentNames>pg_catalog</CollationParentNames>
+    </index>
+    <key id="315" parent="271" name="users_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16716</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>3417</StateNumber>
+      <UnderlyingIndexId>16715</UnderlyingIndexId>
+    </key>
+    <key id="316" parent="271" name="users_email_key">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16718</ObjectId>
+      <StateNumber>3417</StateNumber>
+      <UnderlyingIndexId>16717</UnderlyingIndexId>
     </key>
   </database-model>
 </dataSource>

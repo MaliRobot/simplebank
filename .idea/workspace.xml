@@ -5,14 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cf188da6-b9be-437c-9f1d-89dc1828272f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/api/validator.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/currency.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/user.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/user_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/query/user.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/util/password.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/util/password_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/586e64ce-97d7-4fc7-a5c9-ac2e7b6c1e3e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/586e64ce-97d7-4fc7-a5c9-ac2e7b6c1e3e.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/586e64ce-97d7-4fc7-a5c9-ac2e7b6c1e3e/storage_v2/_src_/database/simple_bank.qcxlqw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/586e64ce-97d7-4fc7-a5c9-ac2e7b6c1e3e/storage_v2/_src_/database/simple_bank.qcxlqw/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/account.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/account.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/transfer.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/transfer.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/mock/store.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/mock/store.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/sqlc/account_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/sqlc/account_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/sqlc/main_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/sqlc/main_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/sqlc/store.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/sqlc/store.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/sqlc/models.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/sqlc/models.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/sqlc/querier.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/sqlc/querier.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/sqlc/transfer_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/sqlc/transfer_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/random.go" beforeDir="false" afterPath="$PROJECT_DIR$/util/random.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

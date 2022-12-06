@@ -2,7 +2,6 @@ package db
 
 import (
 	"context"
-	"fmt"
 	"github.com/stretchr/testify/require"
 	"github.com/techschool/simplebank/util"
 	"testing"
@@ -70,7 +69,6 @@ func TestListTransfers(t *testing.T) {
 	require.NotEmpty(t, res)
 
 	for _, trans := range res {
-		fmt.Print("meow")
 		require.NotEmpty(t, trans.ID)
 		require.NotEmpty(t, trans.FromAccountID)
 		require.NotEmpty(t, trans.ToAccountID)
