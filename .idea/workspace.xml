@@ -5,19 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cf188da6-b9be-437c-9f1d-89dc1828272f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/token/jwt_maker.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/token/jwt_maker_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/token/paseto_maker_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/token/payload.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/middleware.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/middleware_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/586e64ce-97d7-4fc7-a5c9-ac2e7b6c1e3e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/586e64ce-97d7-4fc7-a5c9-ac2e7b6c1e3e.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/account.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/account.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/account_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/account_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/main_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/main_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/user_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/user_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.env" beforeDir="false" afterPath="$PROJECT_DIR$/app.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/util/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/transfer.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/transfer.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/mock/store.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/mock/store.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/query/user.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/query/user.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/sqlc/account_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/sqlc/account_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/sqlc/querier.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/sqlc/querier.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/sqlc/user.sql.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/sqlc/user.sql.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/sqlc/user_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/sqlc/user_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +58,7 @@
     "WebServerToolWindowFactoryState": "false",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "/Users/misha/Documents/simplebank/token",
+    "last_opened_file_path": "/Users/misha/Documents/simplebank/api",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -73,6 +74,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/api" />
       <recent name="$PROJECT_DIR$/token" />
       <recent name="$PROJECT_DIR$/db/query" />
     </key>

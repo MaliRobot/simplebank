@@ -3,14 +3,16 @@ package db
 import (
 	"context"
 	"database/sql"
-	"github.com/stretchr/testify/require"
-	"github.com/techschool/simplebank/util"
 	"testing"
 	"time"
+
+	"github.com/stretchr/testify/require"
+	"github.com/techschool/simplebank/util"
 )
 
 func createRandomAccount(t *testing.T) Account {
 	user := createRandomUser(t)
+
 	arg := CreateAccountParams{
 		Owner:    user.Username,
 		Balance:  util.RandomMoney(),
