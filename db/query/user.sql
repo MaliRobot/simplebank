@@ -22,13 +22,3 @@ SET
 WHERE
         username = sqlc.arg(username)
     RETURNING *;
-
--- name: UpdateUser :one
-UPDATE users
-SET
-    hashed_password = $1,
-    full_name = $2,
-    email = $3
-WHERE
-    username = $4
-RETURNING *;
